@@ -1,7 +1,10 @@
 <?php  
-    class Home {
-        public function index($nama, $pekerjaan){
-            echo "Halo, saya $nama, saya seorang $pekerjaan";
+    class Home extends Controller{
+        public function index(){
+            $data['judul'] = 'Home';
+            $this->view('templates/header', $data);
+            $this->view('home/index');
+            $this->view('templates/footer');
         }
     }
 ?>
